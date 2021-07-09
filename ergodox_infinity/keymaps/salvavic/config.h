@@ -1,0 +1,13 @@
+#pragma once
+
+#undef TAPPING_TERM
+#define TAPPING_TERM 150
+#define TAPPING_TERM_PER_KEY
+#define LONG_TAPPING_TERM 400
+#define PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
+// #define TAPPING_FORCE_HOLD
+#undef TAPPING_TOGGLE
+#define TAPPING_TOGGLE 2
+
+#define EE_HANDS
