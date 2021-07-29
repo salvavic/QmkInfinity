@@ -361,7 +361,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* MOUSE: Ratón
      * ┌──────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬──────┐
-     * │ FLASH│    │    │    │    │    │    │              │    │    │    │    │    │    │FLASH │
+     * │      │    │    │    │    │    │FLAS│              │FLAS│    │    │    │    │    │      │
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
      * │      │    │ RA │    │    │ A0 │    │              │    │    │    │    │ScUp│ScRt│      │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
@@ -399,6 +399,84 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_VOLD, KC_MUTE, KC_MPLY),
 
 };
+
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LGUI_T(KC_A):
+            return true;
+        case LALT_T(KC_S):
+            return true;
+        case LCTL_T(KC_D):
+            return true;
+        case LSFT_T(KC_F):
+            return true;
+        case RSFT_T(KC_J):
+            return true;
+        case RCTL_T(KC_K):
+            return true;
+        case RALT_T(KC_L):
+            return true;
+        case LGUI_T(KC_L):
+            return true;
+
+        case LALT_T(KC_R):
+            return true;
+        case LSFT_T(KC_S):
+            return true;
+        case LCTL_T(KC_T):
+            return true;
+        case RGUI_T(KC_O):
+            return true;
+        case RALT_T(KC_I):
+            return true;
+        case RSFT_T(KC_N):
+            return true;
+        case RCTL_T(KC_E):
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LGUI_T(KC_A):
+            return true;
+        case LALT_T(KC_S):
+            return true;
+        case LCTL_T(KC_D):
+            return true;
+        case LSFT_T(KC_F):
+            return true;
+        case RSFT_T(KC_J):
+            return true;
+        case RCTL_T(KC_K):
+            return true;
+        case RALT_T(KC_L):
+            return true;
+        case LGUI_T(KC_L):
+            return true;
+
+        case LALT_T(KC_R):
+            return true;
+        case LSFT_T(KC_S):
+            return true;
+        case LCTL_T(KC_T):
+            return true;
+        case RGUI_T(KC_O):
+            return true;
+        case RALT_T(KC_I):
+            return true;
+        case RSFT_T(KC_N):
+            return true;
+        case RCTL_T(KC_E):
+            return true;
+
+        default:
+            return false;
+    }
+}
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
