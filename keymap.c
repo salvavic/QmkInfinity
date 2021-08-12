@@ -343,7 +343,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
         _______, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX, SGUI(KC_S),
-        _______, LCTL(KC_SLSH), LCTL(ES_PLUS), M_WE, M_CF4, _______,
+        _______, LCTL(KC_SLSH), LCTL(ES_PLUS), XXXXXXX, M_WE, M_CF4,
         _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
         _______, _______, _______, _______, _______,
                                             KC_WBAK, KC_WFWD,  // Web forward/back
