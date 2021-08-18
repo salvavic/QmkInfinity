@@ -12,3 +12,4 @@
 
 `qmk setup`
 
+        _______, LCTL(KC_SLSH), LCTL(ES_PLUS), XXXXXXX, M_WE, M_CF4,
