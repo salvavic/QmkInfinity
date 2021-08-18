@@ -6,5 +6,6 @@ enum custom_layers {
     _FN,
     _SIMBOLOS,
     _MOUSE,
-    _NUMERICO
+    _NUMERICO,
+    _ADJUST
 };
