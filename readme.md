@@ -6,10 +6,16 @@
 ## Comandos para añadir al repo e inicializar
 `git submodule add https://github.com/salvavic/QmkInfinity.git keyboards/ergodox_infinity/keymaps/salvavic`
 
-`git submodules init`
+`git submodule init`
 
-`git submodules update`
+`git submodule update`
 
 `qmk setup`
 
-        _______, LCTL(KC_SLSH), LCTL(ES_PLUS), XXXXXXX, M_WE, M_CF4,
+
+
+https://github.com/qmk/qmk_firmware/pull/13481/files/a0d8574e0f1b835fa133976374d83ce68c34fe3d
+
+https://github.com/qmk/qmk_firmware/issues/12450
+
+https://github.com/qmk/qmk_firmware/pull/13481
