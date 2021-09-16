@@ -183,7 +183,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         KC_ESC,  TD(TD_1),    TD(TD_2),    TD(TD_3),    TD(TD_4),      TD(TD_5),    DF(_COLEMAK),
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    TG(_MOUSE),
-        KC_CAPS, LGUI_T(KC_A),    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
+        KC_CAPS, HOME_A,    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    ES_MORD,
         KC_LCTL, LALT_T(KC_LGUI), TT(_NUMERICO), TT(_FN),  TT(_SIMBOLOS),
                                             KC_HOME, KC_END,
@@ -445,7 +445,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A):
+        case HOME_A:
             return true;
         case LALT_T(KC_S):
             return true;
@@ -484,7 +484,7 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
 
 bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A):
+        case HOME_A:
             return true;
         case LALT_T(KC_S):
             return true;
@@ -523,7 +523,7 @@ bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
 
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A):
+        case HOME_A:
             return true;
         case LALT_T(KC_S):
             return true;
@@ -562,7 +562,7 @@ bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case LGUI_T(KC_A):
+        case HOME_A:
             return TAPPING_TERM + LONG_TAPPING_TERM;
         case LALT_T(KC_S):
             return TAPPING_TERM + LONG_TAPPING_TERM;
