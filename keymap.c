@@ -95,7 +95,9 @@ enum custom_keycodes {
     VRSN,
     RGB_SLD,
     QWERTY,
-    COLEMAK
+    COLEMAK,
+    MCO,MCOD, // Comentarios en visual studio
+    MSW
 };
 enum unicode_names {
     // LEFT HAND
@@ -129,33 +131,6 @@ enum {
     TD_1 = 0,  TD_2, TD_3, TD_4, TD_5, TD_6, TD_7, TD_8, TD_9, TD_10, TD_11, TD_12,
     TD_PC, TD_ALT,
     TD_INT, TD_EXC, TD_ANG, TD_LLA, TD_PAR, TD_PAC, TD_DOT
-};
-
-qk_tap_dance_action_t tap_dance_actions[] = {
-  [TD_1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
-  [TD_2] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
-  [TD_3] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_F3),
-  [TD_4] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_F4),
-  [TD_5] = ACTION_TAP_DANCE_DOUBLE(KC_5, KC_F5),
-  [TD_6] = ACTION_TAP_DANCE_DOUBLE(KC_6, KC_F6),
-  [TD_7] = ACTION_TAP_DANCE_DOUBLE(KC_7, KC_F7),
-  [TD_8] = ACTION_TAP_DANCE_DOUBLE(KC_8, KC_F8),
-  [TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
-  [TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
-  [TD_11] = ACTION_TAP_DANCE_DOUBLE(ES_QUOT, KC_F11),
-  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_F12),
-  [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, S(KC_COMM)),
-  [TD_DOT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, S(KC_DOT)),
-
-  [TD_ALT] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_LALT),
-
-  [TD_INT] = ACTION_TAP_DANCE_DOUBLE(ES_IQUE, ES_QUES),
-  [TD_EXC] = ACTION_TAP_DANCE_DOUBLE(ES_IEXL, ES_EXLM),
-  [TD_ANG] = ACTION_TAP_DANCE_DOUBLE(ES_LABK, ES_RABK),
-  [TD_LLA] = ACTION_TAP_DANCE_DOUBLE(ES_LCBR, ES_RCBR),
-  [TD_PAR] = ACTION_TAP_DANCE_DOUBLE(ES_LPRN, ES_RPRN),
-  [TD_PAC] = ACTION_TAP_DANCE_DOUBLE(ES_LBRC, ES_RBRC),
-
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -324,7 +299,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ┌──────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬──────┐
      * │      │ F1 │ F2 │ F3 │ F4 │ F5 │PrtS│              │    │ F6 │ F7 │ F8 │ F9 │ F11│  F11 │
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
-     * │      │    │    │    │    │    │CatP│              │PGUP│    │    │    │    │    │  F12 │
+     * │      │C_kc│C_ku│swag│    │    │CatP│              │PGUP│    │    │    │    │    │  F12 │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
      * │      │    │    │    │    │ CF4├────┤              ├────┤    │    │  ↑ │    │    │      │
      * ├──────┼────┼────┼────┼────┼────┤    │              │PGDW├────┼────┼────┼────┼────┼──────┤
@@ -342,7 +317,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN] = LAYOUT_ergodox(
         // left hand
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
-        _______, XXXXXXX, XXXXXXX, XXXXXXX , XXXXXXX, XXXXXXX, SGUI(KC_S),
+        _______, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
         _______, _______, _______, _______, _______, M_CF4,
         _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
         _______, _______, _______, _______, _______,
@@ -436,6 +411,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_MPRV, KC_MNXT,
         KC_VOLU,
         KC_VOLD, KC_MUTE, KC_MPLY),
+};
+
+qk_tap_dance_action_t tap_dance_actions[] = {
+  [TD_1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
+  [TD_2] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
+  [TD_3] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_F3),
+  [TD_4] = ACTION_TAP_DANCE_DOUBLE(KC_4, KC_F4),
+  [TD_5] = ACTION_TAP_DANCE_DOUBLE(KC_5, KC_F5),
+  [TD_6] = ACTION_TAP_DANCE_DOUBLE(KC_6, KC_F6),
+  [TD_7] = ACTION_TAP_DANCE_DOUBLE(KC_7, KC_F7),
+  [TD_8] = ACTION_TAP_DANCE_DOUBLE(KC_8, KC_F8),
+  [TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
+  [TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
+  [TD_11] = ACTION_TAP_DANCE_DOUBLE(ES_QUOT, KC_F11),
+  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_F12),
+  [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, S(KC_COMM)),
+  [TD_DOT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, S(KC_DOT)),
+
+  [TD_ALT] = ACTION_TAP_DANCE_DOUBLE(KC_RALT, KC_LALT),
+
+  [TD_INT] = ACTION_TAP_DANCE_DOUBLE(ES_IQUE, ES_QUES),
+  [TD_EXC] = ACTION_TAP_DANCE_DOUBLE(ES_IEXL, ES_EXLM),
+  [TD_ANG] = ACTION_TAP_DANCE_DOUBLE(ES_LABK, ES_RABK),
+  [TD_LLA] = ACTION_TAP_DANCE_DOUBLE(ES_LCBR, ES_RCBR),
+  [TD_PAR] = ACTION_TAP_DANCE_DOUBLE(ES_LPRN, ES_RPRN),
+  [TD_PAC] = ACTION_TAP_DANCE_DOUBLE(ES_LBRC, ES_RBRC),
+
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
@@ -634,6 +636,33 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             }
             return false;
             break;
+
+        case MCO:
+            if (record->event.pressed) {
+                // when keycode MCOMENT is pressed
+                SEND_STRING(SS_DOWN(X_LCTL)"kc");
+            } else {
+                // when keycode MCOMENT is released
+            }
+            break;
+        case MCOD:
+            if (record->event.pressed) {
+                // when keycode MCOMENT is pressed
+                SEND_STRING(SS_DOWN(X_LCTL)"ku");
+            } else {
+                // when keycode MCOMENT is released
+            }
+            break;
+
+        case MSW:
+            if (record->event.pressed) {
+                // when keycode MCOMENT is pressed
+                SEND_STRING("swagger-ui");
+            } else {
+                // when keycode MCOMENT is released
+            }
+            break;
+
     }
     return true;
 }
