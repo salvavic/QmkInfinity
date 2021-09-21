@@ -299,7 +299,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ┌──────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬──────┐
      * │      │ F1 │ F2 │ F3 │ F4 │ F5 │PrtS│              │    │ F6 │ F7 │ F8 │ F9 │ F11│  F11 │
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
-     * │      │C_kc│C_ku│swag│    │    │CatP│              │PGUP│    │    │    │    │    │  F12 │
+     * │ App  │C_kc│C_ku│swag│    │    │CatP│              │PGUP│    │    │    │    │    │  F12 │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
      * │      │    │    │    │    │ CF4├────┤              ├────┤    │    │  ↑ │    │    │      │
      * ├──────┼────┼────┼────┼────┼────┤    │              │PGDW├────┼────┼────┼────┼────┼──────┤
@@ -317,7 +317,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_FN] = LAYOUT_ergodox(
         // left hand
         _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
-        _______, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
+        KC_APP, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
         _______, _______, _______, _______, _______, M_CF4,
         _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
         _______, _______, _______, _______, _______,
