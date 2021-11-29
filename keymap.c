@@ -10,85 +10,6 @@
 #define _MOUSE      4  // Capa RATON
 #define _NUMERICO   5  // Capa Teclado Numerico
 
-#define REDO LCTL(KC_Y)
-#define UNDO LCTL(KC_Z)
-#define CUT LCTL(KC_X)
-#define COPY LCTL(KC_C)
-#define PASTE LCTL(KC_V)
-#define M_CF4 LCTL(KC_F4)
-#define M_WE G(KC_E)
-
-#define ES_LESS_MAC KC_GRAVE
-#define ES_GRTR_MAC LSFT(KC_GRAVE)
-#define ES_BSLS_MAC ALGR(KC_6)
-#define NO_PIPE_ALT KC_GRAVE
-#define NO_BSLS_ALT KC_EQUAL
-#define LSA_T(kc) MT(MOD_LSFT | MOD_LALT, kc)
-#define BP_NDSH_MAC ALGR(KC_8)
-
-
-// COLEMAK - home row mods
-#define HOMEQ_A LGUI_T(KC_A)
-#define HOMEQ_R LALT_T(KC_R)
-#define HOMEQ_S LSFT_T(KC_S)
-#define HOMEQ_T LCTL_T(KC_T)
-#define HOMEQ_O LGUI_T(KC_O)
-#define HOMEQ_I LALT_T(KC_I)
-#define HOMEQ_E RSFT_T(KC_E)
-#define HOMEQ_N LCTL_T(KC_N)
-// QWERTY - home row mods
-#define HOME_A LGUI_T(KC_A)
-#define HOME_S LALT_T(KC_S)
-#define HOME_D LCTL_T(KC_D)
-#define HOME_F LSFT_T(KC_F)
-#define HOME_NT LGUI_T(ES_NTIL)
-#define HOME_K RCTL_T(KC_K)
-#define HOME_L RALT_T(KC_L)
-#define HOME_J RSFT_T(KC_J)
-
-// One Shot Shifts
-#define OS_LSFT OSM(MOD_LSFT)
-#define OS_RSFT OSM(MOD_RSFT)
-
-
-// #define ES_MORD KC_GRV  // º
-// #define ES_QUOT KC_MINS // '
-// #define ES_IEXL KC_EQL  // ¡
-// #define ES_GRV  KC_LBRC // ` (dead)
-// #define ES_PLUS KC_RBRC // +
-// #define ES_NTIL KC_SCLN // Ñ
-// #define ES_ACUT KC_QUOT // ´ (dead)
-// #define ES_CCED KC_NUHS // Ç
-// #define ES_LABK KC_NUBS // <
-// #define ES_COMM KC_COMM // ,
-// #define ES_DOT  KC_DOT  // .
-// #define ES_MINS KC_SLSH // -
-// #define ES_EXLM S(ES_1)    // !
-// #define ES_LPRN S(ES_8)    // (
-// #define ES_RPRN S(ES_9)    // )
-// #define ES_EQL  S(ES_0)    // =
-// #define ES_QUES S(ES_QUOT) // ?
-// #define ES_IQUE S(ES_IEXL) // ¿
-// #define ES_CIRC S(ES_GRV)  // ^ (dead)
-// #define ES_ASTR S(ES_PLUS) // *
-// #define ES_RABK S(ES_LABK) // >
-// #define ES_SCLN S(KC_COMM) // ;
-// #define ES_COLN S(KC_DOT)  // :
-// #define ES_UNDS S(ES_MINS) // _
-// // Row 1
-// #define ES_BSLS ALGR(ES_MORD) // (backslash)
-// #define ES_PIPE ALGR(ES_1)    // |
-// #define ES_AT   ALGR(ES_2)    // @
-// #define ES_HASH ALGR(ES_3)    // #
-// #define ES_TILD ALGR(ES_4)    // ~
-// #define ES_EURO ALGR(ES_5)    // €
-// #define ES_NOT  ALGR(ES_6)    // ¬
-// // Row 2
-// #define ES_LBRC ALGR(ES_GRV)  // [
-// #define ES_RBRC ALGR(ES_PLUS) // ]
-// // Row 3
-// #define ES_LCBR ALGR(ES_ACUT) // {
-// #define ES_RCBR ALGR(ES_CCED) // }
 enum custom_keycodes {
     PLACEHOLDER = SAFE_RANGE,  // can always be here
     EPRM,
@@ -133,6 +54,94 @@ enum {
     TD_INT, TD_EXC, TD_ANG, TD_LLA, TD_PAR, TD_PAC, TD_DOT
 };
 
+#define QWERTY DF(_QWERTY)
+#define COLEMA DF(_COLEMAK)
+#define FN MO(_FN)
+#define FNDEL LT(_FN, KC_DEL)
+#define SIMBO MO(_SIMBOLOS)
+#define SIMBOENT LT(_SIMBOLOS, KC_ENTER)
+#define MOUSE MO(_MOUSE)
+#define NUMERIC MO(_NUMERICO)
+
+#define REDO LCTL(KC_Y)
+#define UNDO LCTL(KC_Z)
+#define CUT LCTL(KC_X)
+#define COPY LCTL(KC_C)
+#define PASTE LCTL(KC_V)
+#define M_CF4 LCTL(KC_F4)
+#define M_WE G(KC_E)
+
+#define ES_LESS_MAC KC_GRAVE
+#define ES_GRTR_MAC LSFT(KC_GRAVE)
+#define ES_BSLS_MAC ALGR(KC_6)
+#define NO_PIPE_ALT KC_GRAVE
+#define NO_BSLS_ALT KC_EQUAL
+#define LSA_T(kc) MT(MOD_LSFT | MOD_LALT, kc)
+#define BP_NDSH_MAC ALGR(KC_8)
+
+
+// COLEMAK - home row mods
+#define HOMEQ_A LGUI_T(KC_A)
+#define HOMEQ_R LALT_T(KC_R)
+#define HOMEQ_S LSFT_T(KC_S)
+#define HOMEQ_T LCTL_T(KC_T)
+#define HOMEQ_O LGUI_T(KC_O)
+#define HOMEQ_I LALT_T(KC_I)
+#define HOMEQ_E RSFT_T(KC_E)
+#define HOMEQ_N LCTL_T(KC_N)
+// QWERTY - home row mods
+#define HOME_A LGUI_T(KC_A)
+#define HOME_S LALT_T(KC_S)
+#define HOME_D LCTL_T(KC_D)
+#define HOME_F LSFT_T(KC_F)
+#define HOME_NT LGUI_T(ES_NTIL)
+#define HOME_K RCTL_T(KC_K)
+#define HOME_L RALT_T(KC_L)
+#define HOME_J RSFT_T(KC_J)
+
+// One Shot Shifts
+#define OS_LSFT OSM(MOD_LSFT)
+#define OS_RSFT OSM(MOD_RSFT)
+
+// #define ES_MORD KC_GRV  // º
+// #define ES_QUOT KC_MINS // '
+// #define ES_IEXL KC_EQL  // ¡
+// #define ES_GRV  KC_LBRC // ` (dead)
+// #define ES_PLUS KC_RBRC // +
+// #define ES_NTIL KC_SCLN // Ñ
+// #define ES_ACUT KC_QUOT // ´ (dead)
+// #define ES_CCED KC_NUHS // Ç
+// #define ES_LABK KC_NUBS // <
+// #define ES_COMM KC_COMM // ,
+// #define ES_DOT  KC_DOT  // .
+// #define ES_MINS KC_SLSH // -
+// #define ES_EXLM S(ES_1)    // !
+// #define ES_LPRN S(ES_8)    // (
+// #define ES_RPRN S(ES_9)    // )
+// #define ES_EQL  S(ES_0)    // =
+// #define ES_QUES S(ES_QUOT) // ?
+// #define ES_IQUE S(ES_IEXL) // ¿
+// #define ES_CIRC S(ES_GRV)  // ^ (dead)
+// #define ES_ASTR S(ES_PLUS) // *
+// #define ES_RABK S(ES_LABK) // >
+// #define ES_SCLN S(KC_COMM) // ;
+// #define ES_COLN S(KC_DOT)  // :
+// #define ES_UNDS S(ES_MINS) // _
+// // Row 1
+// #define ES_BSLS ALGR(ES_MORD) // (backslash)
+// #define ES_PIPE ALGR(ES_1)    // |
+// #define ES_AT   ALGR(ES_2)    // @
+// #define ES_HASH ALGR(ES_3)    // #
+// #define ES_TILD ALGR(ES_4)    // ~
+// #define ES_EURO ALGR(ES_5)    // €
+// #define ES_NOT  ALGR(ES_6)    // ¬
+// // Row 2
+// #define ES_LBRC ALGR(ES_GRV)  // [
+// #define ES_RBRC ALGR(ES_PLUS) // ]
+// // Row 3
+// #define ES_LCBR ALGR(ES_ACUT) // {
+// #define ES_RCBR ALGR(ES_CCED) // }
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* BASE (QWERTY)
      *
@@ -156,11 +165,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_QWERTY] = LAYOUT_ergodox(  // QWERTY persistent layer
         // left hand
-        KC_ESC,  TD(TD_1),    TD(TD_2),    TD(TD_3),    TD(TD_4),      TD(TD_5),    DF(_COLEMAK),
+        KC_ESC,  TD(TD_1),    TD(TD_2),    TD(TD_3),    TD(TD_4),      TD(TD_5), COLEMA,
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    TG(_MOUSE),
         KC_CAPS, HOME_A,    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    ES_MORD,
-        KC_LCTL, LALT_T(KC_LGUI), TT(_NUMERICO), TT(_FN),  TT(_SIMBOLOS),
+        KC_LCTL, LALT_T(KC_LGUI), NUMERIC, FN,  SIMBO,
                                             KC_HOME, KC_END,
                                                        KC_PGUP,
                                    KC_BSPC, KC_DEL,    KC_PGDN,
@@ -437,168 +446,10 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_LLA] = ACTION_TAP_DANCE_DOUBLE(ES_LCBR, ES_RCBR),
   [TD_PAR] = ACTION_TAP_DANCE_DOUBLE(ES_LPRN, ES_RPRN),
   [TD_PAC] = ACTION_TAP_DANCE_DOUBLE(ES_LBRC, ES_RBRC),
-
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
   return update_tri_layer_state(state, _SIMBOLOS, _FN, _ADJUST);
-}
-
-
-bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_A:
-            return true;
-        case LALT_T(KC_S):
-            return true;
-        case LCTL_T(KC_D):
-            return true;
-        case LSFT_T(KC_F):
-            return true;
-        case RSFT_T(KC_J):
-            return true;
-        case RCTL_T(KC_K):
-            return true;
-        case RALT_T(KC_L):
-            return true;
-        case RGUI_T(KC_SCLN):
-            return true;
-
-        case LALT_T(KC_R):
-            return true;
-        case LSFT_T(KC_S):
-            return true;
-        case LCTL_T(KC_T):
-            return true;
-        case RGUI_T(KC_O):
-            return true;
-        case RALT_T(KC_I):
-            return true;
-        case RSFT_T(KC_N):
-            return true;
-        case RCTL_T(KC_E):
-            return true;
-
-        default:
-            return false;
-    }
-}
-
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_A:
-            return true;
-        case LALT_T(KC_S):
-            return true;
-        case LCTL_T(KC_D):
-            return true;
-        case LSFT_T(KC_F):
-            return true;
-        case RSFT_T(KC_J):
-            return true;
-        case RCTL_T(KC_K):
-            return true;
-        case RALT_T(KC_L):
-            return true;
-        case LGUI_T(KC_SCLN):
-            return true;
-
-        case LALT_T(KC_R):
-            return true;
-        case LSFT_T(KC_S):
-            return true;
-        case LCTL_T(KC_T):
-            return true;
-        case RGUI_T(KC_O):
-            return true;
-        case RALT_T(KC_I):
-            return true;
-        case RSFT_T(KC_N):
-            return true;
-        case RCTL_T(KC_E):
-            return true;
-
-        default:
-            return false;
-    }
-}
-
-bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_A:
-            return true;
-        case LALT_T(KC_S):
-            return true;
-        case LCTL_T(KC_D):
-            return true;
-        case LSFT_T(KC_F):
-            return true;
-        case RSFT_T(KC_J):
-            return true;
-        case RCTL_T(KC_K):
-            return true;
-        case RALT_T(KC_L):
-            return true;
-        case LGUI_T(KC_SCLN):
-            return true;
-
-        case LALT_T(KC_R):
-            return true;
-        case LSFT_T(KC_S):
-            return true;
-        case LCTL_T(KC_T):
-            return true;
-        case RGUI_T(KC_O):
-            return true;
-        case RALT_T(KC_I):
-            return true;
-        case RSFT_T(KC_N):
-            return true;
-        case RCTL_T(KC_E):
-            return true;
-
-        default:
-            return false;
-    }
-}
-
-uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_A:
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case LALT_T(KC_S):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case LCTL_T(KC_D):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case LSFT_T(KC_F):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RSFT_T(KC_J):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RCTL_T(KC_K):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RALT_T(KC_L):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case LGUI_T(KC_SCLN):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-
-        case LALT_T(KC_R):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case LSFT_T(KC_S):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case LCTL_T(KC_T):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RGUI_T(KC_O):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RALT_T(KC_I):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RSFT_T(KC_N):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-        case RCTL_T(KC_E):
-            return TAPPING_TERM + LONG_TAPPING_TERM;
-
-        default:
-            return TAPPING_TERM;
-    }
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -695,41 +546,159 @@ void matrix_scan_user(void) {
     }
 };
 
-//     /* Capa Vacia
-//      * ┌──────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬──────┐
-//      * │      │    │    │    │    │    │    │              │    │    │    │    │    │    │      │
-//      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
-//      * │      │    │    │    │    │    │    │              │    │    │    │    │    │    │      │
-//      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
-//      * │      │    │    │    │    │    ├────┤              ├────┤    │    │    │    │    │      │
-//      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
-//      * │      │    │    │    │    │    │    │              │    │    │    │    │    │    │      │
-//      * └─┬────┼────┼────┼────┼────┼────┴────┘              └────┴────┼────┼────┼────┼────┼────┬─┘
-//      *   │    │    │    │    │    │                                  │    │    │    │    │    │
-//      *   └────┴────┴────┴────┴────┘    ┌────┬────┐    ┌────┬────┐    └────┴────┴────┴────┴────┘
-//      *                                 │    │    │    │    │    │
-//      *                            ┌────┼────┼────┤    ├────┼────┼────┐
-//      *                            │    │    │    │    │    │    │    │
-//      *                            │    │    ├────┤    ├────┤    │    │
-//      *                            │    │    │    │    │    │    │    │
-//      *                            └────┴────┴────┘    └────┴────┴────┘
-//      */
-//     [_MOUSE] = LAYOUT_ergodox(
-//         // left hand
-//         _______,   _______, _______, _______, _______, _______, _______,
-//         _______, _______, _______,    _______,  _______, _______, _______,
-//         _______, _______, _______,    _______,  _______, _______,
-//         _______, _______, _______,    _______,  _______, _______, _______,
-//         _______, _______, _______,    _______,  _______,
-//                                                 _______, _______,
-//                                                          _______,
-//                                       _______,  _______, _______,
-//         // right hand
-//         _______, _______,  _______, _______, _______, _______, _______,
-//         _______, _______, _______, _______,  _______, _______, _______,
-//                  _______, _______, _______,  _______, _______, _______,
-//         _______, _______, _______, _______,   _______,  _______,  _______,
-//                           _______, _______,  _______, _______,   _______,
-//         _______, _______,
-//         _______,
-//         _______, _______, _______),
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_A:
+            return true;
+        case HOME_S:
+            return true;
+        case HOME_D:
+            return true;
+        case HOME_F:
+            return true;
+        case HOME_J:
+            return true;
+        case HOME_K:
+            return true;
+        case HOME_L:
+            return true;
+        case HOME_NT:
+            return true;
+
+        case LALT_T(KC_R):
+            return true;
+        case LSFT_T(KC_S):
+            return true;
+        case LCTL_T(KC_T):
+            return true;
+        case RGUI_T(KC_O):
+            return true;
+        case RALT_T(KC_I):
+            return true;
+        case RSFT_T(KC_N):
+            return true;
+        case RCTL_T(KC_E):
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_A:
+            return true;
+        case HOME_S:
+            return true;
+        case HOME_D:
+            return true;
+        case HOME_F:
+            return true;
+        case HOME_J:
+            return true;
+        case HOME_K:
+            return true;
+        case HOME_L:
+            return true;
+        case HOME_NT:
+            return true;
+
+        case LALT_T(KC_R):
+            return true;
+        case LSFT_T(KC_S):
+            return true;
+        case LCTL_T(KC_T):
+            return true;
+        case RGUI_T(KC_O):
+            return true;
+        case RALT_T(KC_I):
+            return true;
+        case RSFT_T(KC_N):
+            return true;
+        case RCTL_T(KC_E):
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_A:
+            return true;
+        case HOME_S:
+            return true;
+        case HOME_D:
+            return true;
+        case HOME_F:
+            return true;
+        case HOME_J:
+            return true;
+        case HOME_K:
+            return true;
+        case HOME_L:
+            return true;
+        case HOME_NT:
+            return true;
+
+        case LALT_T(KC_R):
+            return true;
+        case LSFT_T(KC_S):
+            return true;
+        case LCTL_T(KC_T):
+            return true;
+        case RGUI_T(KC_O):
+            return true;
+        case RALT_T(KC_I):
+            return true;
+        case RSFT_T(KC_N):
+            return true;
+        case RCTL_T(KC_E):
+            return true;
+
+        default:
+            return false;
+    }
+}
+
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case HOME_A:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_S:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_D:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_F:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_J:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_K:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_L:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case HOME_NT:
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+
+        case LALT_T(KC_R):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case LSFT_T(KC_S):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case LCTL_T(KC_T):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case RGUI_T(KC_O):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case RALT_T(KC_I):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case RSFT_T(KC_N):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+        case RCTL_T(KC_E):
+            return TAPPING_TERM + LONG_TAPPING_TERM;
+
+        default:
+            return TAPPING_TERM;
+    }
+}
