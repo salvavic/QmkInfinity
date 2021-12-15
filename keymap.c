@@ -188,7 +188,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TG(_MOUSE), KC_Y, KC_U, KC_I, KC_O, KC_P, TD(TD_12),
                  KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN,  KC_QUOT,
         TG(_FN), KC_N, KC_M, TD(TD_PC), KC_DOT,  KC_SLSH,  KC_RSFT,
-                            TT(_SIMBOLOS), TT(_FN), TG(_MOUSE), KC_RALT, KC_RGUI,
+                            SIMBOENT, FNDEL, NUMERIC, KC_RALT, KC_RGUI,
                                     KC_RALT, KC_RCTRL,
         KC_INS,
         KC_APP, KC_ENT,   KC_SPC),
