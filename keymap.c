@@ -595,45 +595,6 @@ bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-bool get_retro_tapping(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case HOME_A:
-            return true;
-        case HOME_S:
-            return true;
-        case HOME_D:
-            return true;
-        case HOME_F:
-            return true;
-        case HOME_J:
-            return true;
-        case HOME_K:
-            return true;
-        case HOME_L:
-            return true;
-        case HOME_NT:
-            return true;
-
-        case LALT_T(KC_R):
-            return true;
-        case LSFT_T(KC_S):
-            return true;
-        case LCTL_T(KC_T):
-            return true;
-        case RGUI_T(KC_O):
-            return true;
-        case RALT_T(KC_I):
-            return true;
-        case RSFT_T(KC_N):
-            return true;
-        case RCTL_T(KC_E):
-            return true;
-
-        default:
-            return false;
-    }
-}
-
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case HOME_A:
