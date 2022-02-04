@@ -179,7 +179,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    TG(_MOUSE),
         KC_CAPS, HOME_A,    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    ES_MORD,
-        KC_LCTL, LALT_T(KC_LGUI), NUMERIC, FN,  SIMBOENT,
+        KC_LCTL, LALT_T(KC_LGUI), NUMERIC, FNDEL,  SIMBOENT,
                                             KC_HOME, KC_END,
                                                        KC_PGUP,
                                    KC_BSPC, KC_DEL,    KC_PGDN,
