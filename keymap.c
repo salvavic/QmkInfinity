@@ -176,9 +176,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_QWERTY] = LAYOUT_ergodox(  // QWERTY persistent layer
         // left hand
         KC_ESC,  TD(TD_1),    TD(TD_2),    TD(TD_3),    TD(TD_4),      TD(TD_5), COLEMA,
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    TG(_MOUSE),
-        KC_CAPS, HOME_A,    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    ES_MORD,
+        KC_CAPS,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    TG(_MOUSE),
+        KC_TAB, HOME_A,    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
+        TD(TD_MAY), KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    ES_MORD,
         KC_LCTL, LALT_T(KC_LGUI), NUMERIC, FNDEL,  SIMBOENT,
                                             KC_HOME, KC_END,
                                                        KC_PGUP,
@@ -456,6 +456,8 @@ qk_tap_dance_action_t tap_dance_actions[] = {
   [TD_LLA] = ACTION_TAP_DANCE_DOUBLE(ES_LCBR, ES_RCBR),
   [TD_PAR] = ACTION_TAP_DANCE_DOUBLE(ES_LPRN, ES_RPRN),
   [TD_PAC] = ACTION_TAP_DANCE_DOUBLE(ES_LBRC, ES_RBRC),
+  [TD_MAY] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
+
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
