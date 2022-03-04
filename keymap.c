@@ -51,7 +51,7 @@ enum {
     //Teclas de Funcion
     TD_1 = 0,  TD_2, TD_3, TD_4, TD_5, TD_6, TD_7, TD_8, TD_9, TD_10, TD_11, TD_12,
     TD_PC, TD_ALT,
-    TD_INT, TD_EXC, TD_ANG, TD_LLA, TD_PAR, TD_PAC, TD_DOT
+    TD_INT, TD_EXC, TD_ANG, TD_LLA, TD_PAR, TD_PAC, TD_DOT, TD_MAY
 };
 
 #define QWERTY DF(_QWERTY)
