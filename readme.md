@@ -1,7 +1,7 @@
 # Layout de Salvador
 
 ## Comando compilacion
-`make ergodox_infinity:salvavic:dfu-util`
+`make input_club/ergodox_infinity:salvavic:dfu-util`
 
 ## Comandos para añadir al repo e inicializar
 `git submodule add https://github.com/salvavic/QmkInfinity.git keyboards/input_club/ergodox_infinity/keymaps/salvavic`
