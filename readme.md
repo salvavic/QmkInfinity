@@ -16,4 +16,7 @@ https://github.com/qmk/qmk_firmware/pull/13481/files/a0d8574e0f1b835fa133976374d
 
 https://github.com/qmk/qmk_firmware/issues/12450
 
-https://github.com/qmk/qmk_firmware/pull/13481
+https://github.com/qmk/qmk_firmware/pull/1348
+
+Nota:
+https://github.com/qmk/qmk_firmware/pull/15968
