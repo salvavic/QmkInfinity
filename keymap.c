@@ -2,6 +2,8 @@
 #include "version.h"
 #include "layers.h"
 #include "keymap_spanish.h"
+//#define UNICODE_SELECTED_MODES UC_LNX
+
 
 #define _QWERTY     0  // default QWERTY base layer
 #define _COLEMAK    1  // default QWERTY base layer
@@ -142,8 +144,8 @@ enum {
 // #define ES_LCBR ALGR(ES_ACUT) // {
 // #define ES_RCBR ALGR(ES_CCED) // }
 
-const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPACE, KC_DELETE);
-const key_override_t bspace_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DELETE, KC_BSPACE);
+const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DELETE);
+const key_override_t bspace_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DELETE, KC_BSPC);
 
 // // This globally defines all key overrides to be used
 const key_override_t **key_overrides = (const key_override_t *[]){
@@ -189,7 +191,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                  KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN,  KC_QUOT,
         TG(_FN), KC_N, KC_M, TD(TD_PC), KC_DOT,  KC_SLSH,  KC_RSFT,
                             SIMBOENT, FNDEL, NUMERIC, KC_RALT, KC_RGUI,
-                                    KC_RALT, KC_RCTRL,
+                                    KC_RALT, KC_RCTL,
         KC_INS,
         KC_APP, KC_ENT,   KC_SPC),
 
@@ -228,8 +230,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TG(_MOUSE), KC_J,     KC_L,    KC_U,     KC_Y,    KC_SCLN,  TD(TD_12),
                  KC_H,     RSFT_T(KC_N),    RCTL_T(KC_E),     RALT_T(KC_I),    KC_O,     (KC_QUOT),
         TG(_FN), KC_K, KC_M, TD(TD_PC), TD(TD_DOT),  KC_SLSH,  KC_RSFT,
-                            TT(_SIMBOLOS), TT(_FN), TG(_MOUSE), KC_RALT, KC_RCTRL,
-        KC_RALT, KC_RCTRL,
+                            TT(_SIMBOLOS), TT(_FN), TG(_MOUSE), KC_RALT, KC_RCTL,
+        KC_RALT, KC_RCTL,
         KC_INS,
         KC_APP, KC_ENT,   KC_SPC),
 
@@ -374,7 +376,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_MOUSE] = LAYOUT_ergodox(
         // left hand
-        _______,   _______    , _______   , _______       , _______, _______, RESET,
+        _______,   _______    , _______   , _______       , _______, _______, QK_BOOT,
         _______, _______    , KC_MS_UP  , _______       ,  _______, KC_MS_ACCEL0, _______,
         _______, KC_MS_LEFT , KC_MS_DOWN, KC_MS_RIGHT   ,  _______, KC_MS_ACCEL1,
         _______, KC_WH_U    , KC_WH_D   , KC_MS_BTN1  ,  KC_MS_BTN2, KC_MS_ACCEL2, _______,
@@ -383,7 +385,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                          _______,
                                       _______,  _______, _______,
         // right hand
-        RESET, _______,  _______, _______, _______, _______, _______,
+        QK_BOOT, _______,  _______, _______, _______, _______, _______,
         _______, _______, _______, _______,  KC_WH_U, KC_WH_R, _______,
                  _______, KC_MS_BTN1, KC_MS_BTN2,  KC_MS_BTN3, _______, _______,
         _______, _______, _______, _______,   _______,  _______,  _______,
@@ -413,7 +415,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_ADJUST] = LAYOUT_ergodox(
         // left hand
-        _______,RESET, DEBUG, _______, _______, _______, _______,
+        _______,QK_BOOT, DB_TOGG, _______, _______, _______, _______,
         _______, _______, _______, _______,  _______, _______, _______,
         _______, _______, _______, _______,  _______, _______,
         _______, _______, _______, _______,  _______, _______, _______,
@@ -432,7 +434,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_VOLD, KC_MUTE, KC_MPLY),
 };
 
-qk_tap_dance_action_t tap_dance_actions[] = {
+tap_dance_action_t tap_dance_actions[] = {
   [TD_1] = ACTION_TAP_DANCE_DOUBLE(KC_1, KC_F1),
   [TD_2] = ACTION_TAP_DANCE_DOUBLE(KC_2, KC_F2),
   [TD_3] = ACTION_TAP_DANCE_DOUBLE(KC_3, KC_F3),
@@ -531,10 +533,10 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 // Runs just one time when the keyboard initializes.
-void matrix_init_user(void){
+//void matrix_init_user(void){
     // Start in Linux mode for unicode input
-    set_unicode_input_mode(UC_LNX);
-};
+//    set_unicode_input_mode(UC_LNX);
+//};
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
