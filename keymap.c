@@ -134,7 +134,7 @@ enum {
 // #define ES_PIPE ALGR(ES_1)    // |
 // #define ES_AT   ALGR(ES_2)    // @
 // #define ES_HASH ALGR(ES_3)    // #
-// #define ES_TILD ALGR(ES_4)    // ~
+// #define ES_TILD ALGR(KC_4)    // ~
 // #define ES_EURO ALGR(ES_5)    // €
 // #define ES_NOT  ALGR(ES_6)    // ¬
 // // Row 2
@@ -188,7 +188,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
         TG(_NUMERICO), TD(TD_6), TD(TD_7), TD(TD_8), TD(TD_9),TD(TD_10), TD(TD_11),
         TG(_MOUSE), KC_Y, KC_U, KC_I, KC_O, KC_P, TD(TD_12),
-                 KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN,  KC_QUOT,
+                 KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN,  KC_LBRC,
         TG(_FN), KC_N, KC_M, TD(TD_PC), KC_DOT,  KC_SLSH,  KC_RSFT,
                             SIMBOENT, FNDEL, NUMERIC, KC_RALT, KC_RGUI,
                                     KC_RALT, KC_RCTL,
@@ -228,7 +228,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // right hand
         TG(_NUMERICO), TD(TD_6), TD(TD_7), TD(TD_8), TD(TD_9),TD(TD_10), TD(TD_11),
         TG(_MOUSE), KC_J,     KC_L,    KC_U,     KC_Y,    KC_SCLN,  TD(TD_12),
-                 KC_H,     RSFT_T(KC_N),    RCTL_T(KC_E),     RALT_T(KC_I),    KC_O,     (KC_QUOT),
+                 KC_H,     RSFT_T(KC_N),    RCTL_T(KC_E),     RALT_T(KC_I),    KC_O, KC_LBRC,
         TG(_FN), KC_K, KC_M, TD(TD_PC), TD(TD_DOT),  KC_SLSH,  KC_RSFT,
                             TT(_SIMBOLOS), TT(_FN), TG(_MOUSE), KC_RALT, KC_RCTL,
         KC_RALT, KC_RCTL,
@@ -241,9 +241,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
      * │      │  = │  * │  + │  @ │  \ │ {  │              │ }  │ €  │  $ │  [ │ ]  │ º  │      │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
-     * │      │  " │  ' │  / │  & │  | ├────┤              ├────┤ ¡  │  ! │  ( │ )  │    │      │
+     * │      │  " │  ' │  / │  & │  | ├────┤              ├────┤ ¡  │  ! │  ( │ )  │ '  │     │
      * ├──────┼────┼────┼────┼────┼────┤ (  │              │ )  ├────┼────┼────┼────┼────┼──────┤
-     * │      │ <  │ >  │  % │  - │  # │    │              │    │ ¿  │  ? │  { │ }  │    │      │
+     * │      │ <  │ >  │  % │  - │  # │    │              │    │ ¿  │  ? │  { │ }  │ `  │      │
      * └─┬────┼────┼────┼────┼────┼────┴────┘              └────┴────┼────┼────┼────┼────┼────┬─┘
      *   │    │    │    │    │    │                                  │    │    │    │    │    │
      *   └────┴────┴────┴────┴────┘    ┌────┬────┐    ┌────┬────┐    └────┴────┴────┴────┴────┘
@@ -254,7 +254,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                            │    │    │    │    │    │    │    │
      *                            └────┴────┴────┘    └────┴────┴────┘
      */
-
     [_SIMBOLOS] = LAYOUT_ergodox(
         // left hand
         _______, _______,   _______,   _______,   _______,   _______,   ES_LBRC,
@@ -269,7 +268,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ES_RBRC, _______,_______,_______,_______,_______, KC_DEL,
         ES_RCBR, ALGR(KC_5),S(KC_4),ALGR(KC_LBRC),ALGR(KC_RBRC),KC_GRV,_______,
                  KC_EQL, S(KC_1),  S(KC_8),S(KC_9), KC_MINS, S(KC_LBRC),
-        ES_RPRN, S(KC_EQL),S(KC_MINS),ALGR(KC_QUOT), ALGR(KC_NUHS),KC_LBRC, _______,
+        ES_RPRN, S(KC_EQL),S(KC_MINS),ALGR(KC_QUOT), ALGR(KC_NUHS),KC_LBRC, KC_GRV,
                           _______, _______, _______, _______, _______,
         _______, _______,
         _______,
@@ -299,7 +298,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // left hand
         _______, _______,   _______,   _______,   _______,   _______,   _______,
         _______, C(KC_BSLS), _______, _______, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______,
+        _______, _______, KC_LALT, _______, _______, _______,
         _______, _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______,
                                             _______, _______,
@@ -307,10 +306,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______, _______, _______,
         // right hand
         _______, _______, _______, KC_PSLS, KC_PAST, KC_KP_MINUS, KC_HOME,
-        _______, _______, KC_7, KC_8, KC_9, KC_KP_PLUS,  KC_END,
-                 _______, KC_4, KC_5, KC_6, KC_KP_MINUS, KC_PGUP,
-        _______, _______, KC_1, KC_2, KC_3, KC_KP_EQUAL, KC_PGDN,
-                          KC_0, KC_DOT, KC_ENT,  _______,    _______,
+        _______, _______, KC_P7, KC_P8, KC_P9, KC_KP_PLUS,  KC_END,
+                 _______, KC_P4, KC_P5, KC_P6, KC_KP_MINUS, KC_PGUP,
+        _______, _______, KC_P1, KC_P2, KC_P3, KC_KP_EQUAL, KC_PGDN,
+                          KC_P0, KC_DOT, KC_ENT,  _______,    _______,
         _______, _______,
         _______,
         _______, _______, _______),
@@ -446,7 +445,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
   [TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
   [TD_11] = ACTION_TAP_DANCE_DOUBLE(KC_BSPC, KC_F11),
-  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_F12),
+  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_F12),
   [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, S(KC_COMM)),
   [TD_DOT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, S(KC_DOT)),
 
