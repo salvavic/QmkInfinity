@@ -242,7 +242,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * │      │  = │  * │  + │  @ │  \ │ {  │              │ }  │ €  │  $ │  [ │ ]  │ º  │      │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
      * │      │  " │  ' │  / │  & │  | ├────┤              ├────┤ ¡  │  ! │  ( │ )  │    │      │
-     * ├──────┼────┼────┼────┼────┼────┤SPAC│              │ )  ├────┼────┼────┼────┼────┼──────┤
+     * ├──────┼────┼────┼────┼────┼────┤ (  │              │ )  ├────┼────┼────┼────┼────┼──────┤
      * │      │ <  │ >  │  % │  - │  # │    │              │    │ ¿  │  ? │  { │ }  │    │      │
      * └─┬────┼────┼────┼────┼────┼────┴────┘              └────┴────┼────┼────┼────┼────┼────┬─┘
      *   │    │    │    │    │    │                                  │    │    │    │    │    │
@@ -258,18 +258,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [_SIMBOLOS] = LAYOUT_ergodox(
         // left hand
         _______, _______,   _______,   _______,   _______,   _______,   ES_LBRC,
-        _______, ES_EQL, ES_ASTR, ES_PLUS, ES_AT, ES_BSLS, ES_LCBR,
-        _______, S(KC_2), ES_QUOT, ES_SLSH, ES_AMPR, ES_PIPE,
-        _______, ES_LABK, ES_RABK, S(KC_5), KC_SLSH, ES_HASH, KC_SPC,
+        _______, S(KC_0),S(KC_RBRC),KC_RBRC,ALGR(KC_2),ALGR(KC_GRV), ES_LCBR,
+        _______, S(KC_2), KC_MINS, S(KC_7), S(KC_6),ALGR(KC_1),
+        _______, KC_NUBS,S(KC_NUBS),S(KC_5), KC_SLSH,ALGR(KC_3), S(KC_8),
         _______, _______, _______, _______, _______,
                                             _______, _______,
                                                      _______,
                                    _______, _______, _______,
         // right hand
-        ES_RBRC, _______, _______, _______, _______, _______, _______,
-        ES_RCBR, ES_EURO, S(KC_4), ES_LBRC, ES_RBRC, ES_MORD, _______,
-                 ES_IEXL, ES_EXLM, ES_LPRN, ES_RPRN, _______, _______,
-        ES_RPRN, ES_IQUE, ES_QUES, ES_LCBR, ES_RCBR, _______, _______,
+        ES_RBRC, _______,_______,_______,_______,_______, KC_DEL,
+        ES_RCBR, ALGR(KC_5),S(KC_4),ALGR(KC_LBRC),ALGR(KC_RBRC),KC_GRV,_______,
+                 KC_EQL, S(KC_1),  S(KC_8),S(KC_9), KC_MINS, S(KC_LBRC),
+        ES_RPRN, S(KC_EQL),S(KC_MINS),ALGR(KC_QUOT), ALGR(KC_NUHS),KC_LBRC, _______,
                           _______, _______, _______, _______, _______,
         _______, _______,
         _______,
@@ -326,7 +326,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├──────┼────┼────┼────┼────┼────┤    │              │PGDW├────┼────┼────┼────┼────┼──────┤
      * │      │REDO│UNDO│C C │C V │ C C│C SP│              │    │HOME│  ← │  ↓ │ →  │END │      │
      * └─┬────┼────┼────┼────┼────┼────┴────┘              └────┴────┼────┼────┼────┼────┼────┬─┘
-     *   │    │    │    │    │    │                                  │    │    │    │    │    │
+     *   │    │    │    │    │BACK│                                  │    │    │    │    │    │
      *   └────┴────┴────┴────┴────┘    ┌────┬────┐    ┌────┬────┐    └────┴────┴────┴────┴────┘
      *                                 │WbBk│WbFd│    │Prev│Next│
      *                            ┌────┼────┼────┤    ├────┼────┼────┐
@@ -341,7 +341,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_APP, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
         _______, _______, _______, _______, _______, M_CF4,
         _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
-        _______, _______, _______, _______, _______,
+        _______, _______, _______, _______, KC_BSPC,
                                             KC_WBAK, KC_WFWD,  // Web forward/back
                                                      _______,
                                    _______, _______, _______,
@@ -445,7 +445,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_8] = ACTION_TAP_DANCE_DOUBLE(KC_8, KC_F8),
   [TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
   [TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
-  [TD_11] = ACTION_TAP_DANCE_DOUBLE(ES_QUOT, KC_F11),
+  [TD_11] = ACTION_TAP_DANCE_DOUBLE(KC_BSPC, KC_F11),
   [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_F12),
   [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, S(KC_COMM)),
   [TD_DOT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, S(KC_DOT)),
@@ -459,7 +459,6 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_PAR] = ACTION_TAP_DANCE_DOUBLE(ES_LPRN, ES_RPRN),
   [TD_PAC] = ACTION_TAP_DANCE_DOUBLE(ES_LBRC, ES_RBRC),
   [TD_MAY] = ACTION_TAP_DANCE_DOUBLE(KC_LSFT, KC_CAPS),
-
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
