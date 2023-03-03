@@ -162,7 +162,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
      * │ TAB  │  Q │  W │  E │  R │  T │MOUS│              │MOUS│  Y │  U │  I │  O │  P │  `   │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
-     * │BLOQM │  A │  S │  D │  F │  G ├────┤              ├────┤  H │  J │  K │  L │  Ñ │  ´   │
+     * │BLOQM │  A │  S │  D │  F │  G ├────┤              ├────┤  H │  J │  K │  L │  Ñ │ Entr │
      * ├──────┼────┼────┼────┼────┼────┤  º │              │FN  ├────┼────┼────┼────┼────┼──────┤
      * │MAYUS │  Z │  X │  C │  V │  B │    │              │    │  N │  M │  , │  . │  - │MAYUS │
      * └─┬────┼────┼────┼────┼────┼────┴────┘              └────┴────┼────┼────┼────┼────┼────┬─┘
@@ -171,25 +171,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *                                 │Home│ End│    │RAlt│RCtl│
      *                            ┌────┼────┼────┤    ├────┼────┼────┐
      *                            │    │    │PGUP│    │INS │    │    │
-     *                            │BACK│ Del├────┤    ├────┤Entr│ [] │
+     *                            │ [] │ Del├────┤    ├────┤Entr│ [] │
      *                            │    │    │PGDO│    │MENU│    │    │
      *                            └────┴────┴────┘    └────┴────┴────┘
      */
     [_QWERTY] = LAYOUT_ergodox(  // QWERTY persistent layer
         // left hand
-        KC_ESC,  TD(TD_1),    TD(TD_2),    TD(TD_3),    TD(TD_4),      TD(TD_5), COLEMA,
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,      KC_5, COLEMA,
         KC_CAPS,  KC_Q,    KC_W,    KC_E,    KC_R,      KC_T,    TG(_MOUSE),
         KC_TAB, HOME_A,    LALT_T(KC_S),    LCTL_T(KC_D),    LSFT_T(KC_F),      KC_G,
         TD(TD_MAY), KC_Z,    KC_X,    KC_C,    KC_V,      KC_B,    ES_MORD,
         KC_LCTL, LALT_T(KC_LGUI), NUMERIC, FNDEL,  SIMBOENT,
                                             KC_HOME, KC_END,
                                                        KC_PGUP,
-                                   KC_BSPC, KC_DEL,    KC_PGDN,
+                                   KC_SPC, KC_DEL,    KC_PGDN,
         // right hand
-        TG(_NUMERICO), TD(TD_6), TD(TD_7), TD(TD_8), TD(TD_9),TD(TD_10), TD(TD_11),
-        TG(_MOUSE), KC_Y, KC_U, KC_I, KC_O, KC_P, TD(TD_12),
-                 KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN,  KC_LBRC,
-        TG(_FN), KC_N, KC_M, TD(TD_PC), KC_DOT,  KC_SLSH,  KC_RSFT,
+        TG(_NUMERICO), KC_6, KC_7, KC_8, KC_9,KC_0, KC_BSPC,
+        TG(_MOUSE), KC_Y, KC_U, KC_I, KC_O, KC_P, KC_LBRC,
+                 KC_H, RSFT_T(KC_J), RCTL_T(KC_K), RALT_T(KC_L), KC_SCLN,  KC_QUOT,
+        TG(_FN), KC_N, KC_M, TD(TD_PC), KC_DOT,  KC_SLSH,  KC_ENT,
                             SIMBOENT, FNDEL, NUMERIC, KC_RALT, KC_RGUI,
                                     KC_RALT, KC_RCTL,
         KC_INS,
@@ -217,7 +217,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_COLEMAK] = LAYOUT_ergodox(  // Colemak persistent layer (default)
         // left hand
-        KC_ESC,  TD(TD_1),    TD(TD_2),    TD(TD_3),    TD(TD_4),      TD(TD_5),    DF(_QWERTY),
+        KC_ESC,  KC_1,    KC_2,    KC_3,    KC_4,      KC_5, DF(_QWERTY),
         KC_TAB,  KC_Q,    KC_W,    KC_F,    KC_P,      KC_G, TT(_MOUSE),
         KC_CAPS, LGUI_T(KC_A),    LALT_T(KC_R),    LCTL_T(KC_S),    LSFT_T(KC_T),      KC_D,
         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,      KC_B, ES_MORD,
@@ -226,10 +226,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                                        KC_PGUP,
                                    KC_BSPC, KC_DEL,    KC_PGDN,
         // right hand
-        TG(_NUMERICO), TD(TD_6), TD(TD_7), TD(TD_8), TD(TD_9),TD(TD_10), TD(TD_11),
-        TG(_MOUSE), KC_J,     KC_L,    KC_U,     KC_Y,    KC_SCLN,  TD(TD_12),
-                 KC_H,     RSFT_T(KC_N),    RCTL_T(KC_E),     RALT_T(KC_I),    KC_O, KC_LBRC,
-        TG(_FN), KC_K, KC_M, TD(TD_PC), TD(TD_DOT),  KC_SLSH,  KC_RSFT,
+        TG(_NUMERICO), KC_6, KC_7, KC_8, KC_9,KC_0, KC_BSPC,
+        TG(_MOUSE), KC_J,     KC_L,    KC_U,     KC_Y,    KC_SCLN,  KC_LBRC,
+                 KC_H,     RSFT_T(KC_N),    RCTL_T(KC_E),     RALT_T(KC_I),    KC_O, KC_QUOT,
+        TG(_FN), KC_K, KC_M, TD(TD_PC), TD(TD_DOT),  KC_SLSH,  KC_ENT,
                             TT(_SIMBOLOS), TT(_FN), TG(_MOUSE), KC_RALT, KC_RCTL,
         KC_RALT, KC_RCTL,
         KC_INS,
@@ -239,9 +239,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ┌──────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬──────┐
      * │      │    │    │    │    │    │ [  │              │ ]  │    │    │    │    │    │      │
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
-     * │      │  = │  * │  + │  @ │  \ │ {  │              │ }  │ €  │  $ │  [ │ ]  │ º  │      │
+     * │      │  = │  * │  + │  @ │  \ │ {  │              │ }  │ €  │  $ │  [ │ ]  │ º  │  ´   │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
-     * │      │  " │  ' │  / │  & │  | ├────┤              ├────┤ ¡  │  ! │  ( │ )  │ '  │     │
+     * │      │  " │  ' │  / │  & │  | ├────┤              ├────┤ ¡  │  ! │  ( │ )  │ '  │      │
      * ├──────┼────┼────┼────┼────┼────┤ (  │              │ )  ├────┼────┼────┼────┼────┼──────┤
      * │      │ <  │ >  │  % │  - │  # │    │              │    │ ¿  │  ? │  { │ }  │ `  │      │
      * └─┬────┼────┼────┼────┼────┼────┴────┘              └────┴────┼────┼────┼────┼────┼────┬─┘
@@ -445,7 +445,7 @@ tap_dance_action_t tap_dance_actions[] = {
   [TD_9] = ACTION_TAP_DANCE_DOUBLE(KC_9, KC_F9),
   [TD_10] = ACTION_TAP_DANCE_DOUBLE(KC_0, KC_F10),
   [TD_11] = ACTION_TAP_DANCE_DOUBLE(KC_BSPC, KC_F11),
-  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_F12),
+  [TD_12] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_F12),
   [TD_PC] = ACTION_TAP_DANCE_DOUBLE(KC_COMM, S(KC_COMM)),
   [TD_DOT] = ACTION_TAP_DANCE_DOUBLE(KC_DOT, S(KC_DOT)),
 
