@@ -336,7 +336,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_FN] = LAYOUT_ergodox(
         // left hand
-        SGUI(KC_S), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
+        C(KC_PSCR), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
         KC_APP, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
         _______, _______, _______, _______, _______, M_CF4,
         _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
