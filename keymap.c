@@ -306,10 +306,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                    _______, _______, _______,
         // right hand
         _______, _______, _______, KC_PSLS, KC_PAST, KC_KP_MINUS, KC_HOME,
-        _______, _______, KC_P7, KC_P8, KC_P9, KC_KP_PLUS,  KC_END,
-                 _______, KC_P4, KC_P5, KC_P6, KC_KP_MINUS, KC_PGUP,
-        _______, _______, KC_P1, KC_P2, KC_P3, KC_KP_EQUAL, KC_PGDN,
-                          KC_P0, KC_DOT, KC_ENT,  _______,    _______,
+        _______, _______, KC_7, KC_8, KC_9, KC_KP_PLUS,  KC_END,
+                 _______, KC_4, KC_5, KC_6, KC_KP_MINUS, KC_PGUP,
+        _______, _______, KC_1, KC_2, KC_3, KC_KP_EQUAL, KC_PGDN,
+                          KC_0, KC_DOT, KC_ENT,  _______,    _______,
         _______, _______,
         _______,
         _______, _______, _______),
@@ -317,7 +317,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* FUNCTION LAYER: Function keys and interaction
      * ┌──────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬──────┐
-     * │      │ F1 │ F2 │ F3 │ F4 │ F5 │PrtS│              │    │ F6 │ F7 │ F8 │ F9 │ F11│  F11 │
+     * │ CatP │ F1 │ F2 │ F3 │ F4 │ F5 │PrtS│              │    │ F6 │ F7 │ F8 │ F9 │ F11│  F11 │
      * ├──────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼──────┤
      * │ App  │C_kc│C_ku│swag│    │    │CatP│              │PGUP│    │    │    │    │    │  F12 │
      * ├──────┼────┼────┼────┼────┼────┤    │              │    ├────┼────┼────┼────┼────┼──────┤
@@ -336,7 +336,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     [_FN] = LAYOUT_ergodox(
         // left hand
-        _______, KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
+        SGUI(KC_S), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
         KC_APP, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
         _______, _______, _______, _______, _______, M_CF4,
         _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
