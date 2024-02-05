@@ -677,7 +677,41 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     }
 }
 
-/////////////////////////
+#ifdef OLED_ENABLE
+oled_rotation_t oled_init_user(oled_rotation_t rotation) {
+  if (!is_keyboard_master()) {
+    return OLED_ROTATION_180;  // flips the display 180 degrees if offhand
+  }
+  return rotation;
+}
+
+#define L_QWERTY 0
+#define L_SIMBOLOS 8
+#define L_FN 4
+#define L_NUMERICO 32
+#define L_ADJUST 64
+
+void oled_render_layer_state(void) {
+    oled_write_P(PSTR("Layer: "), false);
+    switch (layer_state) {
+        case L_QWERTY:
+            oled_write_ln_P(PSTR("QWERTY"), false);
+            break;
+        case L_SIMBOLOS:
+            oled_write_ln_P(PSTR("SIMB"), false);
+            break;
+        case L_FN:
+            oled_write_ln_P(PSTR("FN"), false);
+            break;
+        case L_NUMERICO:
+            oled_write_ln_P(PSTR("NUM"), false);
+            break;
+        case L_ADJUST:
+            oled_write_ln_P(PSTR("AJUSTE"), false);
+            break;
+    }
+}
+
 char keylog_str[24] = {};
 
 const char code_to_name[60] = {
@@ -704,6 +738,21 @@ void set_keylog(uint16_t keycode, keyrecord_t *record) {
 
 void oled_render_keylog(void) {
     oled_write(keylog_str, false);
+}
+
+void render_bootmagic_status(bool status) {
+    /* Show Ctrl-Gui Swap options */
+    static const char PROGMEM logo[][2][3] = {
+        {{0x97, 0x98, 0}, {0xb7, 0xb8, 0}},
+        {{0x95, 0x96, 0}, {0xb5, 0xb6, 0}},
+    };
+    if (status) {
+        oled_write_ln_P(logo[0][0], false);
+        oled_write_ln_P(logo[0][1], false);
+    } else {
+        oled_write_ln_P(logo[1][0], false);
+        oled_write_ln_P(logo[1][1], false);
+    }
 }
 
 void oled_render_logo(void) {
