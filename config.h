@@ -1,7 +1,6 @@
 #pragma once
 #define HOLD_ON_OTHER_KEY_PRESS_PER_KEY
 
-
 #undef TAPPING_TERM
 #define TAPPING_TERM 100
 #define LONG_TAPPING_TERM 50
