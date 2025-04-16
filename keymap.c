@@ -106,54 +106,14 @@ enum {
 #define OS_LSFT OSM(MOD_LSFT)
 #define OS_RSFT OSM(MOD_RSFT)
 
-// #define ES_MORD KC_GRV  // º
-// #define ES_QUOT KC_MINS // '
-// #define ES_IEXL KC_EQL  // ¡
-// #define ES_GRV  KC_LBRC // ` (dead)
-// #define ES_PLUS KC_RBRC // +
-// #define ES_NTIL KC_SCLN // Ñ
-// #define ES_ACUT KC_QUOT // ´ (dead)
-// #define ES_CCED KC_NUHS // Ç
-// #define ES_LABK KC_NUBS // <
-// #define ES_COMM KC_COMM // ,
-// #define ES_DOT  KC_DOT  // .
-// #define ES_MINS KC_SLSH // -
-// #define ES_EXLM S(ES_1)    // !
-// #define ES_LPRN S(ES_8)    // (
-// #define ES_RPRN S(ES_9)    // )
-// #define ES_EQL  S(ES_0)    // =
-// #define ES_QUES S(ES_QUOT) // ?
-// #define ES_IQUE S(ES_IEXL) // ¿
-// #define ES_CIRC S(ES_GRV)  // ^ (dead)
-// #define ES_ASTR S(ES_PLUS) // *
-// #define ES_RABK S(ES_LABK) // >
-// #define ES_SCLN S(KC_COMM) // ;
-// #define ES_COLN S(KC_DOT)  // :
-// #define ES_UNDS S(ES_MINS) // _
-// // Row 1
-// #define ES_BSLS ALGR(ES_MORD) // (backslash)
-// #define ES_PIPE ALGR(ES_1)    // |
-// #define ES_AT   ALGR(ES_2)    // @
-// #define ES_HASH ALGR(ES_3)    // #
-// #define ES_TILD ALGR(KC_4)    // ~
-// #define ES_EURO ALGR(ES_5)    // €
-// #define ES_NOT  ALGR(ES_6)    // ¬
-// // Row 2
-// #define ES_LBRC ALGR(ES_GRV)  // [
-// #define ES_RBRC ALGR(ES_PLUS) // ]
-// // Row 3
-// #define ES_LCBR ALGR(ES_ACUT) // {
-// #define ES_RCBR ALGR(ES_CCED) // }
+/* const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DELETE); */
+/* const key_override_t bspace_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DELETE, KC_BSPC); */
 
-const key_override_t delete_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_BSPC, KC_DELETE);
-const key_override_t bspace_key_override = ko_make_basic(MOD_MASK_SHIFT, KC_DELETE, KC_BSPC);
-
-// // This globally defines all key overrides to be used
-const key_override_t **key_overrides = (const key_override_t *[]){
-    &delete_key_override,
-    &bspace_key_override,
-    NULL // Null terminate the array of overrides!
-};
+/* const key_override_t **key_overrides = (const key_override_t *[]){ */
+/*     &delete_key_override, */
+/*     &bspace_key_override, */
+/*     NULL // Null terminate the array of overrides! */
+/* }; */
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     /* BASE (QWERTY)
@@ -340,7 +300,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         C(KC_PSCR), KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_PSCR,
         KC_APP, MCO, MCOD, MSW , XXXXXXX, XXXXXXX, SGUI(KC_S),
         _______, _______, _______, _______, _______, M_CF4,
-        _______, REDO, UNDO, CUT, PASTE, COPY, C(KC_SPC),
+        G(KC_TAB), G(C(KC_LEFT)), G(C(KC_RIGHT)), _______, _______, _______, C(KC_SPC),
         _______, _______, _______, _______, KC_BSPC,
                                             KC_WBAK, KC_WFWD,  // Web forward/back
                                                      _______,
